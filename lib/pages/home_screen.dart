@@ -215,7 +215,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ),
                                         Text(
                                           data['address'].toString(),
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             fontSize: 16,
                                             fontWeight: FontWeight.w400,
                                           ),
@@ -225,7 +225,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ),
                                         Text(
                                           data["service_type"].toString(),
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                             fontSize: 14,
                                             fontWeight: FontWeight.w400,
                                             color: Color(0xff999CA0),
@@ -239,12 +239,12 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                           Container(
-                            margin:
-                                EdgeInsets.only(left: 10, top: 20, right: 10),
+                            margin: const EdgeInsets.only(
+                                left: 10, top: 20, right: 10),
                             height: 48,
                             width: MediaQuery.of(context).size.width * .8,
                             decoration: BoxDecoration(
-                              color: Color(0xffD8D8D8),
+                              color: const Color(0xffD8D8D8),
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: Row(
@@ -275,8 +275,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                   children: [
                                     GestureDetector(
                                       onTap: () {
-                                        dateFormate(controller
-                                            .toplinksList[0].createdAt);
                                         controller.isRecentsLinks.value = false;
                                         controller.isTopLinks.value = true;
                                       },
@@ -285,7 +283,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         width: 110,
                                         decoration: BoxDecoration(
                                           color: controller.isTopLinks.value
-                                              ? Color(0xff0E6FFF)
+                                              ? const Color(0xff0E6FFF)
                                               : Colors.white,
                                           borderRadius:
                                               BorderRadius.circular(18),
@@ -296,15 +294,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                             style: TextStyle(
                                                 fontSize: 16,
                                                 fontWeight: FontWeight.w600,
-                                                color:
-                                                    controller.isTopLinks.value
-                                                        ? Color(0xffFFFFFF)
-                                                        : Color(0xff999CA0)),
+                                                color: controller
+                                                        .isTopLinks.value
+                                                    ? const Color(0xffFFFFFF)
+                                                    : const Color(0xff999CA0)),
                                           ),
                                         ),
                                       ),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 13,
                                     ),
                                     GestureDetector(
@@ -317,7 +315,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         width: 110,
                                         decoration: BoxDecoration(
                                           color: controller.isRecentsLinks.value
-                                              ? Color(0xff0E6FFF)
+                                              ? const Color(0xff0E6FFF)
                                               : Colors.white,
                                           borderRadius:
                                               BorderRadius.circular(18),
@@ -330,8 +328,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                               fontWeight: FontWeight.w600,
                                               color: controller
                                                       .isRecentsLinks.value
-                                                  ? Color(0xffFFFFFF)
-                                                  : Color(0xff999CA0),
+                                                  ? const Color(0xffFFFFFF)
+                                                  : const Color(0xff999CA0),
                                             ),
                                           ),
                                         ),
@@ -345,11 +343,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                 width: 36,
                                 decoration: BoxDecoration(
                                   border: Border.all(
-                                    color: Color(0xff999CA0),
+                                    color: const Color(0xff999CA0),
                                   ),
                                   borderRadius: BorderRadius.circular(8),
                                 ),
-                                child: Icon(
+                                child: const Icon(
                                   Icons.search,
                                   color: Color(0xff999CA0),
                                 ),
@@ -360,9 +358,11 @@ class _HomeScreenState extends State<HomeScreen> {
                             () => Container(
                               height: 400,
                               width: MediaQuery.of(context).size.width * .9,
-                              margin: EdgeInsets.only(top: 20),
+                              margin: const EdgeInsets.only(top: 20),
                               child: ListView.builder(
-                                  padding: EdgeInsets.only(top: 5, bottom: 5),
+                                  shrinkWrap: false,
+                                  padding:
+                                      const EdgeInsets.only(top: 5, bottom: 5),
                                   itemCount: controller.isRecentsLinks.value
                                       ? controller.recentlinksList.length
                                       : controller.toplinksList.length,
@@ -375,8 +375,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                       height: 116,
                                       width: MediaQuery.of(context).size.width *
                                           .9,
-                                      margin:
-                                          EdgeInsets.only(top: 10, bottom: 10),
+                                      margin: const EdgeInsets.only(
+                                          top: 10, bottom: 10),
                                       decoration: BoxDecoration(
                                         color: Colors.white,
                                         borderRadius: BorderRadius.circular(8),
@@ -384,7 +384,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       child: Column(
                                         children: [
                                           Padding(
-                                            padding: EdgeInsets.only(
+                                            padding: const EdgeInsets.only(
                                                 left: 15, top: 10, right: 15),
                                             child: Row(
                                               mainAxisAlignment:
@@ -421,7 +421,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                             width: 130,
                                                             child: Text(
                                                               "${controller.isRecentsLinks.value ? recentLinkList.title : topLinkLists.title}",
-                                                              style: TextStyle(
+                                                              style:
+                                                                  const TextStyle(
                                                                 overflow:
                                                                     TextOverflow
                                                                         .ellipsis,
@@ -440,7 +441,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                                     .createdAt
                                                                 : topLinkLists
                                                                     .createdAt),
-                                                            style: TextStyle(
+                                                            style: const TextStyle(
                                                                 fontSize: 12,
                                                                 fontWeight:
                                                                     FontWeight
@@ -457,7 +458,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   children: [
                                                     Text(
                                                       "${controller.isRecentsLinks.value ? recentLinkList.totalClicks : topLinkLists.totalClicks}",
-                                                      style: TextStyle(
+                                                      style: const TextStyle(
                                                         fontSize: 14,
                                                         fontWeight:
                                                             FontWeight.w600,
@@ -478,9 +479,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                             ),
                                           ),
                                           DottedBorder(
-                                            color: Color(0xffA6C7FF),
+                                            color: const Color(0xffA6C7FF),
                                             borderType: BorderType.RRect,
-                                            radius: Radius.circular(8),
+                                            radius: const Radius.circular(8),
                                             child: Container(
                                               padding: const EdgeInsets.only(
                                                   left: 10,
@@ -488,7 +489,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   right: 10,
                                                   bottom: 13),
                                               decoration: BoxDecoration(
-                                                color: Color(0xffE8F1FF),
+                                                color: const Color(0xffE8F1FF),
                                                 borderRadius:
                                                     BorderRadius.circular(8),
                                               ),
@@ -499,7 +500,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 children: [
                                                   Text(
                                                     "${controller.isRecentsLinks.value ? recentLinkList.webLink : topLinkLists.webLink}",
-                                                    style: TextStyle(
+                                                    style: const TextStyle(
                                                       fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.w400,
@@ -522,8 +523,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                   }),
                             ),
                           ),
-                          SizedBox(
-                            height: 100,
+                          const SizedBox(
+                            height: 180,
                           ),
                         ],
                       ),
@@ -533,6 +534,44 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             )
           ],
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        shape: const CircularNotchedRectangle(),
+        notchMargin: 5.0,
+        clipBehavior: Clip.antiAlias,
+        child: SizedBox(
+          height: kBottomNavigationBarHeight,
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              IconButton(
+                icon: const Icon(Icons.home),
+                onPressed: () {
+                  setState(() {});
+                },
+              ),
+              IconButton(
+                icon: const Icon(Icons.search),
+                onPressed: () {
+                  setState(() {});
+                },
+              ),
+              IconButton(
+                icon: const Icon(Icons.favorite_border_outlined),
+                onPressed: () {
+                  setState(() {});
+                },
+              ),
+              IconButton(
+                icon: const Icon(Icons.account_circle_outlined),
+                onPressed: () {
+                  setState(() {});
+                },
+              )
+            ],
+          ),
         ),
       ),
     );
